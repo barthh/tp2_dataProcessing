@@ -11,7 +11,7 @@ object MainKafkaAvroProducer {
     logger.info("Used `sbt run` to start the app")
 
     for (i <- 0 to 20) {
-      val news =  News(s"key $i", s"value $i")
+      val news =  News(s"key $i", s"value $i",Some("tedefefe"))
       logger.info(s"Sending ${news.toString}")
       KafkaAvroProducerService.produce(ConfService.TOPIC_OUT, s"key$i", news)
     }
@@ -21,4 +21,3 @@ object MainKafkaAvroProducer {
     System.exit(0)
   }
 }
-

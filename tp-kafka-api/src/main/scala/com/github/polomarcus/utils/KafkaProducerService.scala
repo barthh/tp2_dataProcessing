@@ -14,7 +14,7 @@ object KafkaProducerService {
 
   props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringSerializer")
   props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringSerializer")
-  props.put(ProducerConfig.ENABLE_IDEMPOTENCE_CONFIG, "false")
+  props.put(ProducerConfig.ENABLE_IDEMPOTENCE_CONFIG, "true")
 
   private val producer = new KafkaProducer[String, String](props)
 
